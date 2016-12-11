@@ -5,7 +5,6 @@ import Songs from './songs';
 
 
 class SingleAlbum extends Component {
-
 	render() {
     const selectedAlbum = this.props.selectedAlbum;
 
@@ -25,7 +24,7 @@ class SingleAlbum extends Component {
             </tr>
           </thead>
           
-          <Songs songs={selectedAlbum.songs}/>
+          <Songs songs={selectedAlbum.songs} play={this.props.play} />
           
         </table>
       </div>

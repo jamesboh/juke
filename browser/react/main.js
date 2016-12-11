@@ -42,6 +42,12 @@ class Main extends React.Component {
 			selectedAlbum: {}
 		})
 	}
+	play(url) {
+		const audio = document.createElement('audio');
+		audio.src = url
+		audio.load();
+		audio.play();
+	}
 	render() {
 		const el = (
 			<div id="main" className="container-fluid">
@@ -49,7 +55,7 @@ class Main extends React.Component {
 					<Sidebar resetSelectedAlbum={this.resetSelectedAlbum.bind(this)} />
 				</div>
 				<div className="col-xs-10">
-					{ Object.keys(this.state.selectedAlbum).length ? (<SingleAlbum selectedAlbum={this.state.selectedAlbum} />) : null }
+					{ Object.keys(this.state.selectedAlbum).length ? (<SingleAlbum selectedAlbum={this.state.selectedAlbum} play={this.play.bind(this)} />) : null }
 					<h3>Albums</h3>
 					<Albums albums={this.state.albums} handleClick={this.handleClick.bind(this)} />
 				</div>

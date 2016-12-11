@@ -11,7 +11,7 @@ class Songs extends Component {
 			{ songs.map( song => (
 				<tr key={song.id}>
 				  <td>
-				    <button className="btn btn-default btn-xs">
+				    <button className="btn btn-default btn-xs" onClick={ () => this.props.play(song.url) }>
 				      <span className="glyphicon glyphicon-play"></span>
 				    </button>
 				  </td>
