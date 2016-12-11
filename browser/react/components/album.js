@@ -4,15 +4,17 @@ import React, { Component } from 'react';
 
 class Album extends Component {
 	render() {
+		const { album, handleClick } = this.props;
+
 		return (
 			<div className="col-xs-4">
-		      <a className="thumbnail" href="#" onClick={ () => this.props.handleClick(this.props.album) }>
-		        <img src={this.props.album.imageUrl} />
+		      <a className="thumbnail" href="#" onClick={ () => handleClick(album) }>
+		        <img src={album.imageUrl} />
 		        <div className="caption">
 		          <h5>
-		            <span>{this.props.album.name}</span>
+		            <span>{album.name}</span>
 		          </h5>
-		          <small>{this.props.album.songs.length} songs</small>
+		          <small>{album.songs.length} songs</small>
 		        </div>
 		      </a>
 		    </div>
